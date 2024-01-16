@@ -1,0 +1,3 @@
+[submodule "DessertGameEngine/vendor/spdlog"]
+	path = DessertGameEngine/vendor/spdlog
+	url = https://github.com/gabime/spdlog

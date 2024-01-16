@@ -11,15 +11,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Dessert\Log.h" />
     <ClInclude Include="src\Dessert.h" />
     <ClInclude Include="src\Dessert\Application.h" />
     <ClInclude Include="src\Dessert\Core.h" />
     <ClInclude Include="src\Dessert\EntryPoint.h" />
-    <ClInclude Include="src\Test.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Dessert\Log.cpp" />
     <ClCompile Include="src\Dessert\Application.cpp" />
-    <ClCompile Include="src\Test.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -68,6 +68,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>DGE_PLATFORM_WINDOWS;DGE_BUILD_DLL; _WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)DessertGameEngine\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -82,6 +83,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>DGE_PLATFORM_WINDOWS;DGE_BUILD_DLL; _WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)DessertGameEngine\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
