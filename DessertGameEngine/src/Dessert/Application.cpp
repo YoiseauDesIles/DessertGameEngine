@@ -1,3 +1,5 @@
+#include "dgepch.h"
+
 #include "Application.h"
 #include "Dessert/Core.h"
 
@@ -24,7 +26,7 @@ namespace Dessert {
 		if (e.IsInCategory(EventCategoryApplication))
 			DGE_TRACE(e);
 		if (e.IsInCategory(EventCategoryInput))
-			DGE_TRACE(e);
+			DGE_TRACE(e); 
 			
 
 

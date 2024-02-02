@@ -2,8 +2,6 @@
 
 #include "Dessert/Core.h"
 
-#include <string>
-#include <functional>
 
 namespace Dessert {
 

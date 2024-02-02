@@ -18,6 +18,9 @@ project "DessertGameEngine"
 	targetdir "bin/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}/DessertGameEngine"
 	objdir "bin-int/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}/DessertGameEngine"
 
+	pchheader "dgepch.h"
+	pchsource "DessertGameEngine/src/dgepch.cpp"
+
 	files
 	{
 		"DessertGameEngine/src/**.h",

@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Dessert {
 
 	class DESSERT_API KeyEvent : public Event

@@ -23,6 +23,7 @@
     <ClInclude Include="src\Dessert\Events\Event.h" />
     <ClInclude Include="src\Dessert\Events\KeyEvent.h" />
     <ClInclude Include="src\Dessert\Events\MouseEvent.h" />
+    <ClInclude Include="src\dgepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Dessert\Application.cpp">
@@ -31,5 +32,6 @@
     <ClCompile Include="src\Dessert\Log.cpp">
       <Filter>Dessert</Filter>
     </ClCompile>
+    <ClCompile Include="src\dgepch.cpp" />
   </ItemGroup>
 </Project>
