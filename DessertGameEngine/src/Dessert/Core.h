@@ -10,3 +10,5 @@
 #else 
 	#error Dessert only support Windows!
 #endif 
+
+#define BIT(x) (1 << x)

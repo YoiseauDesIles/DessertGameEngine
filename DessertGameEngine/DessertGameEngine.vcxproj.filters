@@ -19,6 +19,10 @@
     <ClInclude Include="src\Dessert\Log.h">
       <Filter>Dessert</Filter>
     </ClInclude>
+    <ClInclude Include="src\Dessert\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Dessert\Events\Event.h" />
+    <ClInclude Include="src\Dessert\Events\KeyEvent.h" />
+    <ClInclude Include="src\Dessert\Events\MouseEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Dessert\Application.cpp">

@@ -26,6 +26,7 @@ project "DessertGameEngine"
 
 	includedirs
 	{
+		"DessertGameEngine/src"
 		"DessertGameEngine/vendor/spdlog/include"
 	}
 

@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 
 
 namespace Dessert {
@@ -22,6 +23,7 @@ namespace Dessert {
 		static std::shared_ptr<spdlog::logger> s_ClientLogger;
 	};
 }
+
 
 
 //Core log macros
