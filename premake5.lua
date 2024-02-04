@@ -64,14 +64,17 @@ project "DessertGameEngine"
 
 	filter "configurations:Debug"
 		defines "DGE_DEBUG"
+		buildOptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "DGE_RELEASE"
+		buildOptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "DGE_DIST"
+		buildOptions "/MD"
 		optimize "On"
 
 

@@ -83,7 +83,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)DessertGameEngine\src;$(SolutionDir)DessertGameEngine\vendor\spdlog\include;$(SolutionDir)DessertGameEngine\vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -152,6 +152,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Dessert\LayerStack.h" />
+    <ClInclude Include="src\Dessert\Layer.h" />
     <ClInclude Include="src\Dessert.h" />
     <ClInclude Include="src\Dessert\Application.h" />
     <ClInclude Include="src\Dessert\Core.h" />
@@ -166,6 +168,8 @@
     <ClInclude Include="src\dgepch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Dessert\LayerStack.cpp" />
+    <ClCompile Include="src\Dessert\Layer.cpp" />
     <ClCompile Include="src\Dessert\Application.cpp" />
     <ClCompile Include="src\Dessert\Log.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />

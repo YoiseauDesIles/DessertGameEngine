@@ -1,9 +1,10 @@
 #pragma once
 
 #include "Core.h"
-#include "Events/Event.h"
-#include "Dessert/Events/ApplicationEvent.h"
 #include "Window.h"
+#include "Dessert/LayerStack.h"
+#include "Dessert/Events/Event.h"
+#include "Dessert/Events/ApplicationEvent.h"
 
 
 namespace Dessert {
@@ -18,11 +19,15 @@ namespace Dessert {
 
 		void OnEvent(Event& event);
 
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* layer);
+
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
+		LayerStack m_LayerStack;
 	};
 
 	//To be defined in the client
