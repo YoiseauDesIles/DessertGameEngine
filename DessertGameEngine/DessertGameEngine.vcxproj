@@ -79,8 +79,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>dgepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>DGE_PLATFORM_WINDOWS;DGE_BUILD_DLL;DGE_DEBUG;GLFW_INCLUDE_NONE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)DessertGameEngine\src;$(SolutionDir)DessertGameEngine\vendor\spdlog\include;$(SolutionDir)DessertGameEngine\vendor\GLFW\include;$(SolutionDir)DessertGameEngine\vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DGE_PLATFORM_WINDOWS;DGE_BUILD_DLL;GLFW_INCLUDE_NONE;DGE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)DessertGameEngine\src;$(SolutionDir)DessertGameEngine\vendor\spdlog\include;$(SolutionDir)DessertGameEngine\vendor\GLFW\include;$(SolutionDir)DessertGameEngine\vendor\Glad\include;$(SolutionDir)DessertGameEngine\vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -104,7 +104,7 @@
       <PrecompiledHeaderFile>dgepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DGE_PLATFORM_WINDOWS;DGE_BUILD_DLL;GLFW_INCLUDE_NONE;DGE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)DessertGameEngine\src;$(SolutionDir)DessertGameEngine\vendor\spdlog\include;$(SolutionDir)DessertGameEngine\vendor\GLFW\include;$(SolutionDir)DessertGameEngine\vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)DessertGameEngine\src;$(SolutionDir)DessertGameEngine\vendor\spdlog\include;$(SolutionDir)DessertGameEngine\vendor\GLFW\include;$(SolutionDir)DessertGameEngine\vendor\Glad\include;$(SolutionDir)DessertGameEngine\vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -132,7 +132,7 @@
       <PrecompiledHeaderFile>dgepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DGE_PLATFORM_WINDOWS;DGE_BUILD_DLL;GLFW_INCLUDE_NONE;DGE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)DessertGameEngine\src;$(SolutionDir)DessertGameEngine\vendor\spdlog\include;$(SolutionDir)DessertGameEngine\vendor\GLFW\include;$(SolutionDir)DessertGameEngine\vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)DessertGameEngine\src;$(SolutionDir)DessertGameEngine\vendor\spdlog\include;$(SolutionDir)DessertGameEngine\vendor\GLFW\include;$(SolutionDir)DessertGameEngine\vendor\Glad\include;$(SolutionDir)DessertGameEngine\vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -163,18 +163,22 @@
     <ClInclude Include="src\Dessert\Events\Event.h" />
     <ClInclude Include="src\Dessert\Events\KeyEvent.h" />
     <ClInclude Include="src\Dessert\Events\MouseEvent.h" />
+    <ClInclude Include="src\Dessert\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Dessert\Layer.h" />
     <ClInclude Include="src\Dessert\LayerStack.h" />
     <ClInclude Include="src\Dessert\Log.h" />
     <ClInclude Include="src\Dessert\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\dgepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Dessert\Application.cpp" />
+    <ClCompile Include="src\Dessert\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Dessert\Layer.cpp" />
     <ClCompile Include="src\Dessert\LayerStack.cpp" />
     <ClCompile Include="src\Dessert\Log.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenRenderer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\dgepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
@@ -186,6 +190,9 @@
     </ProjectReference>
     <ProjectReference Include="vendor\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -400,4 +400,4 @@ FodyWeavers.xsd
 #Others
 bin/
 bin-int/
-DessertGameEngine/vendor/
+#DessertGameEngine/vendor/

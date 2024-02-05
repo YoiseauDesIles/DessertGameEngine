@@ -14,9 +14,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "DessertGameEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "DessertGameEngine/vendor/Glad/include"
+IncludeDir["ImGui"] = "DessertGameEngine/vendor/imgui"
 
 include "DessertGameEngine/vendor/GLFW"
 include "DessertGameEngine/vendor/Glad"
+include "DessertGameEngine/vendor/imgui"
 
 project "DessertGameEngine"
 	location "DessertGameEngine"
@@ -40,13 +42,15 @@ project "DessertGameEngine"
 		"$(SolutionDir)DessertGameEngine/src",
 		"$(SolutionDir)DessertGameEngine/vendor/spdlog/include",
 		"$(SolutionDir)%{IncludeDir.GLFW}",
-		"$(SolutionDir)%{IncludeDir.Glad}"
+		"$(SolutionDir)%{IncludeDir.Glad}",
+		"$(SolutionDir)%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
