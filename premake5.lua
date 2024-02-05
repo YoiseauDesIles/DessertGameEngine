@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to a root folder (Solution dir)
 IncludeDir = {}
 IncludeDir["GLFW"] = "DessertGameEngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "DessertGameEngine/vendor/Glad/include"
 
 include "DessertGameEngine/vendor/GLFW"
+include "DessertGameEngine/vendor/Glad"
 
 project "DessertGameEngine"
 	location "DessertGameEngine"
@@ -37,12 +39,14 @@ project "DessertGameEngine"
 	{
 		"$(SolutionDir)DessertGameEngine/src",
 		"$(SolutionDir)DessertGameEngine/vendor/spdlog/include",
-		"$(SolutionDir)%{IncludeDir.GLFW}"
+		"$(SolutionDir)%{IncludeDir.GLFW}",
+		"$(SolutionDir)%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -54,7 +58,8 @@ project "DessertGameEngine"
 		defines
 		{
 			"DGE_PLATFORM_WINDOWS",
-			"DGE_BUILD_DLL"
+			"DGE_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -64,17 +69,17 @@ project "DessertGameEngine"
 
 	filter "configurations:Debug"
 		defines "DGE_DEBUG"
-		buildOptions "/MDd"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "DGE_RELEASE"
-		buildOptions "/MD"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "DGE_DIST"
-		buildOptions "/MD"
+		buildoptions "/MD"
 		optimize "On"
 
 
@@ -115,12 +120,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "DGE_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "DGE_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "DGE_DIST"
+		buildoptions "/MD"
 		optimize "On"

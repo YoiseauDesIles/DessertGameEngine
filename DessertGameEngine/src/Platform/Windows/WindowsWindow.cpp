@@ -5,6 +5,7 @@
 #include "Dessert/Events/KeyEvent.h"
 #include "Dessert/Events/MouseEvent.h"
 
+#include <glad/glad.h>
 
 namespace Dessert {
 
@@ -31,28 +32,6 @@ namespace Dessert {
 		Shutdown();
 	}
 
-	void Dessert::WindowsWindow::OnUpdate()
-	{
-		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
-	}
-
-	void Dessert::WindowsWindow::SetVSync(bool enabled)
-	{
-		if (enabled)
-			glfwSwapInterval(1);
-		else
-			glfwSwapInterval(0);
-
-		m_Data.VSync = enabled;
-
-	}
-
-	bool Dessert::WindowsWindow::IsVSync() const
-	{
-		return m_Data.VSync;
-	}
-
 	void Dessert::WindowsWindow::Init(const WindowProps& props)
 	{
 		m_Data.Title = props.Title;
@@ -73,6 +52,9 @@ namespace Dessert {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		DGE_CORE_ASSERT(status, "Failed to initialize Glad");
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
@@ -158,6 +140,29 @@ namespace Dessert {
 				data.EventCallback(event);
 			});
 	}
+
+	void Dessert::WindowsWindow::OnUpdate()
+	{
+		glfwPollEvents();
+		glfwSwapBuffers(m_Window);
+	}
+
+	void Dessert::WindowsWindow::SetVSync(bool enabled)
+	{
+		if (enabled)
+			glfwSwapInterval(1);
+		else
+			glfwSwapInterval(0);
+
+		m_Data.VSync = enabled;
+
+	}
+
+	bool Dessert::WindowsWindow::IsVSync() const
+	{
+		return m_Data.VSync;
+	}
+
 
 	void Dessert::WindowsWindow::Shutdown()
 	{

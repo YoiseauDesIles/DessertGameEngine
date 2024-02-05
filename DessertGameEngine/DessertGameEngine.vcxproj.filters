@@ -37,6 +37,12 @@
     <ClInclude Include="src\Dessert\Events\MouseEvent.h">
       <Filter>Dessert\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Dessert\Layer.h">
+      <Filter>Dessert</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dessert\LayerStack.h">
+      <Filter>Dessert</Filter>
+    </ClInclude>
     <ClInclude Include="src\Dessert\Log.h">
       <Filter>Dessert</Filter>
     </ClInclude>
@@ -47,11 +53,15 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\dgepch.h" />
-    <ClInclude Include="src\Dessert\Layer.h" />
-    <ClInclude Include="src\Dessert\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Dessert\Application.cpp">
+      <Filter>Dessert</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Dessert\Layer.cpp">
+      <Filter>Dessert</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Dessert\LayerStack.cpp">
       <Filter>Dessert</Filter>
     </ClCompile>
     <ClCompile Include="src\Dessert\Log.cpp">
@@ -61,7 +71,5 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\dgepch.cpp" />
-    <ClCompile Include="src\Dessert\Layer.cpp" />
-    <ClCompile Include="src\Dessert\LayerStack.cpp" />
   </ItemGroup>
 </Project>
