@@ -1,12 +1,10 @@
 #include "dgepch.h"
 
 #include "Application.h"
-#include "Dessert/Core.h"
-
-#include "Dessert/Log.h"
 
 #include <glad/glad.h>
 
+#include "Input.h"
 
 
 namespace Dessert {
@@ -15,7 +13,7 @@ namespace Dessert {
 
 	Application::Application()
 	{
-		DGE_CORE_ASSERT(s_Instance, "Application already exists");
+		DGE_CORE_ASSERT(!s_Instance, "Application already exists");
 		s_Instance = this;
 
 		m_Window = std::unique_ptr<Window>(Window::Create());

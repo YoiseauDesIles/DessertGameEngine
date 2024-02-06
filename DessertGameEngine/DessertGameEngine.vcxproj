@@ -83,8 +83,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)DessertGameEngine\src;$(SolutionDir)DessertGameEngine\vendor\spdlog\include;$(SolutionDir)DessertGameEngine\vendor\GLFW\include;$(SolutionDir)DessertGameEngine\vendor\Glad\include;$(SolutionDir)DessertGameEngine\vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -110,8 +109,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -138,8 +136,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -164,11 +161,13 @@
     <ClInclude Include="src\Dessert\Events\KeyEvent.h" />
     <ClInclude Include="src\Dessert\Events\MouseEvent.h" />
     <ClInclude Include="src\Dessert\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Dessert\Input.h" />
     <ClInclude Include="src\Dessert\Layer.h" />
     <ClInclude Include="src\Dessert\LayerStack.h" />
     <ClInclude Include="src\Dessert\Log.h" />
     <ClInclude Include="src\Dessert\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenRenderer.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\dgepch.h" />
   </ItemGroup>
@@ -179,6 +178,7 @@
     <ClCompile Include="src\Dessert\LayerStack.cpp" />
     <ClCompile Include="src\Dessert\Log.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenRenderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\dgepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

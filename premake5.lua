@@ -20,10 +20,14 @@ include "DessertGameEngine/vendor/GLFW"
 include "DessertGameEngine/vendor/Glad"
 include "DessertGameEngine/vendor/imgui"
 
+
+startproject = "Sandbox"
+
 project "DessertGameEngine"
 	location "DessertGameEngine"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "off"
 
 	targetdir "bin/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}/DessertGameEngine"
 	objdir "bin-int/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}/DessertGameEngine"
@@ -56,7 +60,6 @@ project "DessertGameEngine"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "on"
 		systemversion "latest"
 
 		defines
@@ -73,24 +76,26 @@ project "DessertGameEngine"
 
 	filter "configurations:Debug"
 		defines "DGE_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "DGE_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "DGE_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
+
 
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}/Sandbox")
 	objdir ("bin-int/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}/Sandbox")
@@ -114,7 +119,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "on"
 		systemversion "latest"
 
 		defines
@@ -124,15 +128,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "DGE_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "DGE_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "DGE_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
