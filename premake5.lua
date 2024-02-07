@@ -15,6 +15,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "DessertGameEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "DessertGameEngine/vendor/Glad/include"
 IncludeDir["ImGui"] = "DessertGameEngine/vendor/imgui"
+IncludeDir["glm"] = "DessertGameEngine/vendor/glm"
 
 include "DessertGameEngine/vendor/GLFW"
 include "DessertGameEngine/vendor/Glad"
@@ -38,7 +39,9 @@ project "DessertGameEngine"
 	files
 	{
 		"DessertGameEngine/src/**.h",
-		"DessertGameEngine/src/**.cpp"
+		"DessertGameEngine/src/**.cpp",
+		"DessertGameEngine/vendor/glm/glm/**.hpp",
+		"DessertGameEngine/vendor/glm/glm/**.inl"
 	}
 
 	includedirs
@@ -47,7 +50,9 @@ project "DessertGameEngine"
 		"$(SolutionDir)DessertGameEngine/vendor/spdlog/include",
 		"$(SolutionDir)%{IncludeDir.GLFW}",
 		"$(SolutionDir)%{IncludeDir.Glad}",
-		"$(SolutionDir)%{IncludeDir.ImGui}"
+		"$(SolutionDir)%{IncludeDir.ImGui}",
+		"$(SolutionDir)%{IncludeDir.glm}"
+
 	}
 
 	links
@@ -109,7 +114,8 @@ project "Sandbox"
 	includedirs
 	{
 		"DessertGameEngine/vendor/spdlog/include",
-		"DessertGameEngine/src"
+		"DessertGameEngine/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links
