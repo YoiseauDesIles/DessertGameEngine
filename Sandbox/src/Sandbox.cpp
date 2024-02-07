@@ -13,11 +13,18 @@ public:
 	void OnUpdate() override
 	{
 		//DGE_INFO("ExampleLayer::Update");
+
+		if (Dessert::Input::isKeyPressed(DGE_KEY_TAB))
+			DGE_TRACE("TAB key is pressed");
 	}
 
 	void OnEvent(Dessert::Event& event) override
 	{
-		DGE_INFO("{0}", event);
+		if (event.GetEventType() == Dessert::EventType::KeyPressed)
+		{
+			Dessert::KeyPressedEvent& e = (Dessert::KeyPressedEvent&)event;
+			DGE_TRACE("{0}", (char)e.getKeyCode());
+		}
 	}
 };
 
