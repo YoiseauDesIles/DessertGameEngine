@@ -1,10 +1,14 @@
 #pragma once
 
 #include "Core.h"
+
 #include "Window.h"
 #include "Dessert/LayerStack.h"
 #include "Dessert/Events/Event.h"
+
 #include "Dessert/Events/ApplicationEvent.h"
+
+#include "Dessert/ImGui/ImGuiLayer.h"
 
 
 namespace Dessert {
@@ -31,6 +35,7 @@ namespace Dessert {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	

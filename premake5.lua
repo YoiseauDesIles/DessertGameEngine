@@ -115,6 +115,7 @@ project "Sandbox"
 	{
 		"DessertGameEngine/vendor/spdlog/include",
 		"DessertGameEngine/src",
+		"DessertGameEngine/vendor",
 		"%{IncludeDir.glm}"
 	}
 
